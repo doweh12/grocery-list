@@ -1,0 +1,117 @@
+body {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 150%;
+  color: #2C3A47;
+}
+
+body h1 {
+  font-size: 36px;
+  line-height: normal;
+  margin: 0;
+}
+
+body > .container {
+  width: calc(100% - 30px);
+  padding: 0 15px;
+}
+
+body > .container > h1 {
+  margin: 20px 0;
+}
+
+body > .container .groceries {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10% 5%;
+  width: 100%;
+}
+
+body > .container .groceries .grocery {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding-top: 100%;
+  background-color: #FFF4D5;
+  border: solid #E17055 5px;
+  border-left-width: 0;
+  border-top-width: 0;
+}
+
+body > .container .groceries .grocery .container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+}
+
+body > .container .groceries .grocery .container .header, body > .container .groceries .grocery .container .footer {
+  color: #E17055;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+body > .container .groceries .grocery .container .header {
+  text-align: right;
+}
+
+body > .container .groceries .grocery .container .body {
+  flex: 1;
+}
+
+body > .container .groceries .grocery .container .body .divider {
+  background-color: #b5b5b5;
+  height: 2px;
+  margin: 2px 0;
+}
+
+body > .container .groceries .grocery .container .body .subtitle {
+  font-weight: bold;
+}
+
+@media (min-width: 1025px) {
+  body > .container {
+    max-width: 980px;
+    margin: auto;
+    padding: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 789px) {
+  body > .container .groceries .grocery .container {
+    padding: 7px;
+  }
+}
+
+@media (max-width: 767px) {
+  body > .container {
+    width: calc(100% - 20px);
+    padding: 0 10px;
+    padding-bottom: 10px;
+  }
+  body > .container .groceries {
+    display: flex;
+    flex-direction: column;
+  }
+  body > .container .groceries .grocery {
+    padding-top: 190px;
+    margin-bottom: 20px;
+  }
+  body > .container .groceries .grocery:last-child {
+    margin-bottom: 0;
+  }
+  body > .container .groceries .grocery .container {
+    justify-content: space-between;
+  }
+  body > .container .groceries .grocery .container .body {
+    flex: 0;
+  }
+  body > .container .groceries .grocery .container .body .title {
+    margin-top: 0;
+  }
+}

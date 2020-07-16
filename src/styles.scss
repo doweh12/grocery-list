@@ -1,0 +1,126 @@
+// Color Variables
+
+$background-color: #FFF4D5;
+$accent-color: #E17055;
+$text-color: #2C3A47;
+$gray: #b5b5b5; 
+
+// Main Styles
+
+body{
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 150%;
+  color:$text-color;
+  h1{
+    font-size:36px;
+    line-height: normal;
+    margin:0;
+  }
+  & > .container {
+    width:calc(100% - 30px);
+    padding: 0 15px;
+    & > h1 {
+      margin:20px 0;
+    }
+    .groceries{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 10% 5%;
+      width:100%;
+  
+      .grocery{
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        padding-top:100%;
+        background-color:$background-color;
+        border: solid $accent-color 5px;
+        border-left-width: 0;
+        border-top-width: 0;
+        .container{
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top:0;
+          right:0;
+          bottom:0;
+          left: 0;
+          padding: 10px;
+          .header, .footer{
+            color:$accent-color;
+            text-transform: uppercase;
+            font-weight: bold;
+          }
+          .header{
+            text-align: right;
+          }
+          .body{
+            flex:1;
+            .divider{
+              background-color:$gray;
+              height:2px;
+              margin: 2px 0;
+            }
+            .subtitle{
+              font-weight: bold;
+            }    
+          }
+        }
+      }
+    }
+  } 
+}
+// Breakpoints
+
+@media(min-width:1025px){
+  body > .container{
+    max-width: 980px;
+    margin:auto;
+    padding:0;
+  }
+}
+// Fixes line wrapping and content overflow issues in this pixel range
+// Ideally, font sizes, breakpoints, box sizing would be adjusted
+// However, all those attributes are being treated as constant
+@media (min-width: 768px) and (max-width: 789px) {
+  body > .container{
+    .groceries{
+      .grocery{
+        .container{
+          padding: 7px;
+        }
+      }
+    }
+  }
+}
+  
+
+@media(max-width:767px) {
+  body > .container{
+    width:calc(100% - 20px);
+    padding:0 10px;
+    padding-bottom:10px;
+    .groceries{
+      display:flex;
+      flex-direction: column;
+      .grocery{
+        padding-top: 190px; // 2 to 1 ratio if screen width is 400px
+        margin-bottom: 20px;
+        &:last-child{
+          margin-bottom:0;
+        }
+        .container{
+          justify-content: space-between;
+          .body{
+            flex:0;
+            .title{
+              margin-top:0;
+            }
+          }
+        }  
+      }
+    }
+  }
+}

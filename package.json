@@ -1,0 +1,21 @@
+{
+  "name": "grocery-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "build": "npx gulp",
+    "watch": "npx gulp watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Oweh",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-handlebars": "^5.0.2",
+    "gulp-hb": "^8.0.0",
+    "gulp-sass": "^4.1.0"
+  }
+}

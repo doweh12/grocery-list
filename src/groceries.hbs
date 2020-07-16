@@ -1,0 +1,18 @@
+<div class="groceries">
+  {{#each groceries}}
+    <div class="grocery">
+      <div class="container">
+        <div class="header">QTY: {{qty}}</div>
+        <div class="body">
+          <div class="title"><h1>{{item}}</h1></div>
+          <div class="divider"></div>
+          <div class="subtitle">
+            <span>{{brand}}</span> <span>{{type}}</span>
+          </div>
+        </div>
+        <div class="footer">{{category}}</div>
+      </div>
+    </div>
+  {{/each}}
+</div>
+{{! This extra line is necessary so output html is neater, separating parent closing tag and this closing tag}}
