@@ -24,7 +24,7 @@ body > .container .groceries {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 10% 5%;
+  gap: 4% 2%;
   width: 100%;
 }
 
@@ -42,6 +42,7 @@ body > .container .groceries .grocery {
 body > .container .groceries .grocery .container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   position: absolute;
   top: 0;
   right: 0;
@@ -61,7 +62,7 @@ body > .container .groceries .grocery .container .header {
 }
 
 body > .container .groceries .grocery .container .body {
-  flex: 1;
+  min-height: calc(36px * (1.155) + 16px* 1.5 * 2 + 2px + 4px);
 }
 
 body > .container .groceries .grocery .container .body .divider {
@@ -79,12 +80,6 @@ body > .container .groceries .grocery .container .body .subtitle {
     max-width: 980px;
     margin: auto;
     padding: 0;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 789px) {
-  body > .container .groceries .grocery .container {
-    padding: 7px;
   }
 }
 
