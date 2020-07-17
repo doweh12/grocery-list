@@ -6,7 +6,11 @@
 
 The required files are in the ```dist``` folder and the source files to generate them are in ```src```
 
-To build the final files in the case the files are not present or a change is made to the source files, run the command
+To build the final files in the case the files are not present or a change is made to the source files, first install node modules with
+```
+npm install
+```
+and then run the command
 ```
 npm run build
 ```
